@@ -40,13 +40,13 @@ public class Storage {
         return chatMessages.size();
     }
 
-    public void addRecord(String user, String message) {
-        chatMessages.add(new ChatMessage(user, message));
+    public void addRecord(String username, String message) {
+        chatMessages.add(new ChatMessage(username, message));
         eventBus.fireEvent(new ChatEvent());
     }
 
-    public void addRecordJoined(String user) {
-        chatMessages.add(new ChatMessage("", user));
+    public void addRecordJoined(String username) {
+        chatMessages.add(new ChatMessage("", username));
         eventBus.fireEvent(new ChatEvent());
     }
 
