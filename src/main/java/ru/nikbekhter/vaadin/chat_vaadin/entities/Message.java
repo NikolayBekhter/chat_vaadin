@@ -31,8 +31,11 @@ public class Message {
     @ManyToOne
     @JoinColumn(name = "recipient")
     private Contact recipient;
-    @Column(name = "message")
-    private String message;
+    @Column(name = "text")
+    private String text;
+    @ManyToOne
+    @JoinColumn(name = "message_history_id")
+    private MessageHistory history;
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
