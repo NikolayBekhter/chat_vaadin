@@ -42,6 +42,7 @@ public class Storage {
 
     public void addRecord(String username, String message) {
         chatMessages.add(new ChatMessage(username, message));
+
         eventBus.fireEvent(new ChatEvent());
     }
 
